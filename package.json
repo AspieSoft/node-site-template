@@ -2,7 +2,7 @@
   "name": "node-site-template",
   "version": "1.0.0",
   "description": "A website template",
-  "main": "index.js",
+  "main": "app.js",
   "private": true,
   "engines": {
     "node": ">=12.0"
