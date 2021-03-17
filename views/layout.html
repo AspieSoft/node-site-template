@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="{{#data description}}">
+    <meta name="keywords" content="{{#data keywords}}">
+    <meta name="author" content="{{#data author}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-meta}}
+    <title>{{#data title}}</title>
+    {{-link}}
+    {{-style}}
+    <link rel="icon" href="/cdn/media/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="/cdn/styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AspieSoft/aspiesoft-auto-embed/cdn/embed.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/cdn/scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AspieSoft/aspiesoft-auto-embed/cdn/embed.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/"><div class="header-image"><div class="header-image-tint"></div></div></a>
+      <div class="header-menu">
+        {{{#import menu}}}
+      </div>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      {{{#import footer}}}
+    </footer>
+    {{-script}}
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "node-site-template",
+  "version": "1.0.0",
+  "description": "A website template",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": ">=12.0"
+  },
+  "author": "AspieSoft",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "@aspiesoft/express-simplified": "^1.0.3"
+  }
+}
