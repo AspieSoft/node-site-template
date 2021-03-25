@@ -1,3 +1,4 @@
+{{#if !content_only}}
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -14,23 +15,30 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
     <link rel="stylesheet" href="/cdn/styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AspieSoft/aspiesoft-auto-embed/cdn/embed.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/cdn/scripts/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/AspieSoft/aspiesoft-auto-embed/cdn/embed.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="/cdn/scripts/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/AspieSoft/aspiesoft-auto-embed/cdn/embed.js" defer></script>
   </head>
   <body>
+    {{#if !fullscreen}}
     <header>
       <a href="/"><div class="header-image"><div class="header-image-tint"></div></div></a>
       <div class="header-menu">
         {{{#import menu}}}
       </div>
     </header>
+    {{/if}}
     <main>
+{{/if}}
       {{{body}}}
+{{#if !content_only}}
     </main>
+    {{#if !fullscreen}}
     <footer>
       {{{#import footer}}}
     </footer>
+    {{/if}}
     {{-script}}
   </body>
 </html>
+{{/if}}

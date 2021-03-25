@@ -1,6 +1,6 @@
 {
   "name": "node-site-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A website template",
   "main": "app.js",
   "private": true,
@@ -10,7 +10,7 @@
   "author": "AspieSoft",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon --ignore public/ app.js"
   },
   "dependencies": {
     "@aspiesoft/express-simplified": "^1.0.3"

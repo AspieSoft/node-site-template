@@ -8,3 +8,18 @@ var AspieSoftAutoEmbedOptions = {
   'popular': '0',
   'live': '0',
 };
+
+function setupElementListeners(){
+  $('iframe').each(function(){
+    if(!this.classList.contains('setup')){
+      $(this).addClass('setup').on('load', function(){
+        $(this).addClass('loaded');
+      });
+      setTimeout(() => {
+        $(this).addClass('loaded');
+      }, 1000);
+    }
+  });
+}
+setupElementListeners();
+setInterval(setupElementListeners, 100);

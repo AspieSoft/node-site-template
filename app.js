@@ -20,4 +20,8 @@ server(3000, (app) => {
     res.render('index');
   });
 
+  app.req('/test', (req, res, next) => {
+    res.render('test', {fullscreen: !!req.data.fullscreen, content_only: !!req.data.content_only});
+  });
+
 });
