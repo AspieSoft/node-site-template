@@ -1,3 +1,18 @@
+/*
+todo: CSS Modifications
+make link and button colors use css vars
+make generic text, confirm text, and cancel text use css vars
+
+add alternate button style (border and no background) (fill background on hover)
+
+add css animation for link hover event
+add css animation for button hover event
+
+add hamburger menu
+move nav bar menu to side (show ham menu if nav bar menu is too big for screen) (include all nav menus in ham menu, even if visible on navbar)
+animate hamburger menu
+*/
+
 :root {
 	--color-black: rgb(0, 0, 0);
 	--color-white: rgb(255, 255, 255);
