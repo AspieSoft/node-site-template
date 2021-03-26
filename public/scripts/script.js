@@ -5,7 +5,7 @@ var AspieSoftAutoEmbedOptions = {
   'ratio': '16:9',
   'auto': '0',
   'mute': '0',
-  'popular': '0',
+  'popular': '1',
   'live': '0',
 };
 
