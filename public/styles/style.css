@@ -1,10 +1,5 @@
 /*
 todo: CSS Modifications
-make link and button colors use css vars
-make generic text, confirm text, and cancel text use css vars
-
-add alternate button style (border and no background) (fill background on hover)
-
 add css animation for link hover event
 add css animation for button hover event
 
@@ -14,38 +9,111 @@ animate hamburger menu
 */
 
 :root {
-	--color-black: rgb(0, 0, 0);
-	--color-white: rgb(255, 255, 255);
+  --dark1: #5a5a5a;
+  --dark2: #353535;
+  --dark3: #1b1b1b;
+  --dark4: #0f0f0f;
 
-  --color-dark-1: rgb(15, 15, 15);
-  --color-dark-2: rgb(27, 27, 27);
-  --color-dark-3: rgb(53, 53, 53);
-  --color-dark-4: rgb(90, 90, 90);
-  --color-dark-4t: rgba(90, 90, 90, 0.3);
+  --dark1t: rgb(90, 90, 90, 0.5);
+  --dark2t: rgb(53, 53, 53, 0.5);
+  --dark3t: rgb(27, 27, 27, 0.5);
+  --dark4t: rgb(15, 15, 15, 0.5);
 
-  --color-light-1: rgb(255, 255, 255);
-  --color-light-2: rgb(250, 250, 250);
-  --color-light-3: rgb(226, 226, 226);
-  --color-light-4: rgb(207, 207, 207);
+  --light1: #ffffff;
+  --light2: #fafafa;
+  --light3: #e2e2e2;
+  --light4: #cfcfcf;
 
-	--color-primary-1: rgb(0, 60, 87);
-	--color-primary-2: rgb(1, 98, 127);
-	--color-primary-3: rgb(91, 161, 193);
-	--color-primary-4: rgb(143, 203, 230);
+  --light1t: rgb(255, 255, 255, 0.5);
+  --light2t: rgb(250, 250, 250, 0.5);
+  --light3t: rgb(226, 226, 226, 0.5);
+  --light4t: rgb(207, 207, 207, 0.5);
 
-	--color-accent-1: rgb(141, 69, 1);
-	--color-accent-2: rgb(167, 81, 1);
-	--color-accent-3: rgb(197, 95, 0);
-	--color-accent-4: rgb(223, 110, 5);
+  --primary1: #00D2FC;
+  --primary2: #00A7D0;
+  --primary3: #007EA5;
+  --primary4: #00577C;
+
+  --primary1t: rgb(0, 210, 252, 0.5);
+  --primary2t: rgb(0, 167, 208, 0.5);
+  --primary3t: rgb(0, 126, 165, 0.5);
+  --primary4t: rgb(0, 87, 124, 0.5);
+
+  --primary1g: linear-gradient(to top right, #00D2FC, #00E2EE, #48EFD7, #88F9BB);
+  --primary2g: linear-gradient(to top right, #00A7D0, #00C5D6, #38E0CD, #85F9BD);
+  --primary3g: linear-gradient(to top right, #007EA5, #00A8BE, #23D2C5, #82F9BF);
+  --primary4g: linear-gradient(to top right, #00577C, #008CA7, #00C4BE, #7DF9C2);
+
+  --accent1: #F79234;
+  --accent2: #CB6E05;
+	--accent3: #A04B00;
+  --accent4: #782900;
+
+  --accent1t: rgb(247, 146, 52, 0.5);
+  --accent2t: rgb(203, 110, 5, 0.5);
+	--accent3t: rgb(160, 75, 0, 0.5);
+  --accent4t: rgb(120, 41, 0, 0.5);
+
+  --accent1g: linear-gradient(to top right, #F79234, #F16A67, #C65D8A, #865C94, #4A577E, #2F4858);
+  --accent2g: linear-gradient(to top right, #CB6E05, #CF4C4C, #AE4775, #774F85, #435077, #2F4858);
+  --accent3g: linear-gradient(to top right, #A04B00, #A6353D, #8E3863, #654474, #3D4A6E, #2F4858);
+  --accent4g: linear-gradient(to top right, #782900, #7F1F30, #702B52, #533A64, #374464, #2F4858);
+
+  --confirm1: #00DC37;
+  --confirm2: #00B000;
+  --confirm3: #008500;
+  --confirm4: #005C00;
+
+  --cancel1: #F53131;
+  --cancel2: #D20019;
+  --cancel3: #AE0000;
+  --cancel4: #8D0000;
+
+  --generic1: #00B5FF;
+  --generic2: #0090D7;
+  --generic3: #006DB0;
+  --generic4: #004B8B;
+
+  --progress1: linear-gradient(to right, red, orangered, orange, yellow, yellowgreen, green);
+  --progress2: linear-gradient(to right, black, navy, rebeccapurple, deeppink, red);
+  --progress3: linear-gradient(to right, black, navy, rebeccapurple, deeppink, red, orangered, orange, yellow, yellowgreen, green);
+
+  --progress1r: linear-gradient(to left, red, orangered, orange, yellow, yellowgreen, green);
+  --progress2r: linear-gradient(to left, black, navy, rebeccapurple, deeppink, red);
+  --progress3r: linear-gradient(to left, black, navy, rebeccapurple, deeppink, red, orangered, orange, yellow, yellowgreen, green);
 }
+
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  border-radius: 3em;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 2px var(--dark4t),
+  inset 0 0 5px var(--dark4t);
+  border-radius: 3em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light4);
+  box-shadow: inset 0 0 5px var(--dark4t);
+  border-radius: 3em;
+  transition: box-shadow 0.3s ease-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 8px var(--dark4t);
+}
+
 
 body {
   margin: 0;
   padding: 0;
   font-size: 1.3rem;
   font-family: 'Noto Sans', sans-serif;
-  background: var(--color-dark-3);
-  color: var(--color-light-1);
+  background: var(--dark2);
+  color: var(--light1);
   box-sizing: border-box;
   display: flex;
   flex-flow: column;
@@ -56,8 +124,8 @@ body {
 header {
   width: 100%;
   box-sizing: border-box;
-  background: var(--color-dark-2);
-  color: var(--color-light-1);
+  background: var(--dark3);
+  color: var(--light1);
 }
 
 main {
@@ -65,7 +133,7 @@ main {
   min-height: auto;
   padding: 20px 30px;
   box-sizing: border-box;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5px var(--dark4t);
   flex: 1 1 auto;
 }
 
@@ -73,14 +141,10 @@ main {
   white-space: pre-wrap;
 }
 
-/*main * {
-  transition: all 0.3s;
-}*/
-
 footer {
   width: 100%;
-  background: var(--color-dark-2);
-  color: var(--color-light-1);
+  background: var(--dark3);
+  color: var(--light1);
   padding: 12px;
   box-sizing: border-box;
   font-size: 1.2rem;
@@ -93,7 +157,7 @@ footer div {
 }
 
 footer a {
-  color: var(--color-light-1);
+  color: var(--light1);
   text-decoration: none;
   font-weight: bold;
 }
@@ -111,20 +175,22 @@ footer a:focus {
   overflow: hidden;
   background: url("/cdn/media/header-image.png") center center no-repeat;
   background-size: 120%;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5px var(--dark4t);
 }
 
 .header-image-tint {
   width: 100%;
   height: 200%;
   background: rgba(0, 0, 0, 0.2);
+  background: var(--dark4);
+  opacity: 0.15;
   transform: translateY(-50%);
 }
 
 .header-menu {
   width: 100%;
-  background: var(--color-dark-2);
-  color: var(--color-light-1);
+  background: var(--dark3);
+  color: var(--light1);
 }
 
 .nav-menu {
@@ -141,7 +207,7 @@ footer a:focus {
 }
 
 .nav-menu a {
-  color: var(--color-light-1);
+  color: var(--light1);
   padding: 12px;
   font-size: 1.7rem;
   text-decoration: none;
@@ -153,7 +219,7 @@ footer a:focus {
 }
 
 a {
-  color: #00d1c7;
+  color: var(--primary1);
   text-decoration: none;
   outline: none;
 }
@@ -166,36 +232,52 @@ a:focus {
 input, textarea, button, select {
   font-size: 1.3rem;
   margin: 10px;
-  padding: 5px 10px;
+  padding: 5px 8px;
   border: none;
   border-radius: 12px;
   outline: none;
-  background: var(--color-light-1);
-  color: var(--color-dark-1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background: var(--light1);
+  color: var(--dark4);
+  box-shadow: 0 0 10px var(--dark4t),
+  inset 0 0 2px var(--dark4t);
+  transition: box-shadow 0.3s ease-out;
 }
 
 input:focus, textarea:focus {
-  box-shadow: 0 0 10px rgba(0, 204, 231, 0.5);
+  box-shadow: 0 0 10px var(--primary1t),
+  inset 0 0 2px var(--primary1t);
 }
 
 input[type="button"], input[type="submit"], button {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  background: #1394b4;
-  color: var(--color-light-1);
+  box-shadow: 0 0 10px var(--dark4t);
+  background: var(--primary2);
+  color: var(--light1);
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: background 0.3s ease-out,
+  color 0.3s ease-out;
 }
 
 input[type="button"]:hover, input[type="submit"]:hover, button:hover,
 input[type="button"]:focus, input[type="submit"]:focus, button:focus {
-  background: #14679e;
+  background: var(--primary3);
+  color: var(--light2);
 }
 
 input[type="checkbox"] {
   transform: scale(1.2);
+}
+
+textarea {
+  width: 100%;
+  height: 50vh;
+  max-width: 1200px;
+  min-width: 200px;
+  max-height: 500px;
+  min-height: 200px;
+  box-sizing: border-box;
 }
 
 iframe {
@@ -205,20 +287,20 @@ iframe {
   height: 80vh;
   border: 0;
   border-radius: 10px;
-  background: #c4c4c4;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
-  inset 0 0 3px #1b1b1b,
-  inset 0 0 3px #1b1b1b,
-  inset 0 0 3px #1b1b1b;
+  background: var(--light4);
+  box-shadow: 0 0 10px var(--dark4t),
+  inset 0 0 3px var(--dark3),
+  inset 0 0 3px var(--dark3),
+  inset 0 0 3px var(--dark3);
   transition: opacity 0.5s;
   opacity: 0;
 }
 
 iframe:focus {
-  box-shadow: 0 0 10px rgb(0, 140, 158, 0.3),
-  inset 0 0 3px #1b1b1b,
-  inset 0 0 3px #1b1b1b,
-  inset 0 0 3px #1b1b1b;
+  box-shadow: 0 0 10px var(--primary1t),
+  inset 0 0 3px var(--dark3),
+  inset 0 0 3px var(--dark3),
+  inset 0 0 3px var(--dark3);
 }
 
 
@@ -227,10 +309,10 @@ iframe.loaded {
 }
 
 .box {
-  background: var(--color-dark-4t);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background: var(--dark1t);
+  box-shadow: 0 0 10px var(--dark4t);
   border-radius: 20px;
-  padding: 5px 10px;
+  padding: 12px 10px;
   margin: 10px;
 }
 
@@ -240,17 +322,50 @@ iframe.loaded {
 }
 
 .text_confirm {
-  color: #00d42e;
+  color: #00DC37; /* #00DC37 */
 }
 
 .text_cancel {
-  color: #df1f18;
+  color: #F53131; /* #F53131 */
 }
 
 .text_generic {
-  color: #16a4e6;
+  color: #00B5FF; /* #00B5FF */
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 10px;
+}
+
+
+.progressbar {
+  width: 64%;
+  height: 30px;
+  border: solid 3px var(--light2);
+  border-radius: 50px;
+  padding: 0;
+  margin: auto;
+  box-shadow: 0 0 12px var(--dark4t),
+  inset 0 0 8px var(--dark4t);
+  background: var(--progress1);
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+.progressbar-loader {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  float: right;
+  background: var(--light3);
+  box-sizing: content-box;
+  box-shadow: inset 0 0 12px var(--dark4t);
+}
+
+.progressbar-text {
+  font-size: 20px;
+  position: absolute;
+  margin: 1px 16px;
+  color: var(--dark4);
+  text-shadow: 0 0 5px var(--dark4);
 }
